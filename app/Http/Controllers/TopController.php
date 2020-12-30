@@ -11,6 +11,26 @@ class TopController extends Controller
 {
     public function index()
     {
+        $data['areaKouSet'] = 11000;
+        $data['areaOtsuSet'] = 12000;
+        $data['areaHeiSet'] = 13000;
+        $data['areaTeiSet'] = 14000;
+        $data['areaAllSet'] = $data['areaKouSet'] + $data['areaOtsuSet'] + $data['areaHeiSet'] + $data['areaTeiSet'];
+
+        $allData = Total::all();
+
+        $data['areaKouTotal'] = $allData->sum('areaKou');
+        $data['areaOtsuTotal'] = $allData->sum('areaOtsu');
+        $data['areaHeiTotal'] = $allData->sum('areaHei');
+        $data['areaTeiTotal'] = $allData->sum('areaTei');
+        $data['areaAllTotal'] = $data['areaKouTotal'] + $data['areaOtsuTotal'] + $data['areaHeiTotal'] + $data['areaTeiTotal'];
+
+        $data['areaAllRate'] = round($data['areaAllTotal'] / $data['areaAllSet'] * 100, 1);
+        $data['areaKouRate'] = round($data['areaKouTotal'] / $data['areaKouSet'] * 100, 1);
+        $data['areaOtsuRate'] = round($data['areaOtsuTotal'] / $data['areaOtsuSet'] * 100, 1);
+        $data['areaHeiRate'] = round($data['areaHeiTotal'] / $data['areaHeiSet'] * 100, 1);
+        $data['areaTeiRate'] = round($data['areaTeiTotal'] / $data['areaTeiSet'] * 100, 1);
+
         $areaList = array(
             'a_data' => 'A',
             'b_data' => 'B',

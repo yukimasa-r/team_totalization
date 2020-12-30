@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <div class="container pt-2 pb-3">
+        <div class="container mt-2 mb-3">
             <nav class="navbar navbar-light border-bottom">
                 <a class="navbar-brand" href="/">エリア得点集計システム</a>
             </nav>
