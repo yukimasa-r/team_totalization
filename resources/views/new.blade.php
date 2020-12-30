@@ -1,6 +1,7 @@
 @extends('layouts.base')
 @section('title', 'データの登録')
 @section('main')
+<div  class='cotainer p-3 border rounded' style="background-color:#ffffff;">
     <h1>データの登録</h1>
     @if(count($errors)>0)
     <ul>
@@ -37,4 +38,5 @@
         </div>
         <input class="btn btn-outline-primary" type="submit" value="登録" />
     </form>
+</div>
 @endsection

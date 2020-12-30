@@ -1,12 +1,12 @@
 @extends('layouts.base')
 @section('title', '集計システム')
 @section('main')
-<div class='cotainer'>
-    @if(session('flash_message'))
-        <div class="alert alert-info" role="alert">
-            {{ session("flash_message") }}
-        </div>
-    @endif
+@if(session('flash_message'))
+<div class="alert alert-info mb-3" role="alert">
+    {{ session("flash_message") }}
+</div>
+@endif
+<div class='cotainer p-3 border rounded' style="background-color:#ffffff;">
     <h1>チームA</h1>
     <a class="btn btn-outline-primary btn-sm my-2" href="{{ route('new', ['teamName' => 'A']) }}">データの登録</a>
     <table class="table">
@@ -22,21 +22,21 @@
         </tr>
         @foreach($a_data as $a)
         <tr>
-            <td>{{ $a->date->format('Y/m/d') }}</td>
-            <td>{{ $a->areaKou }}</td>
-            <td>{{ $a->areaOtsu }}</td>
-            <td>{{ $a->areaHei }}</td>
-            <td>{{ $a->areaTei }}</td>
-            <td>{{ $a->sum }}</td>
-            <td><a class="btn btn-outline-dark" href="{{ route('edit', ['id'=>$a->id]) }}">編集</a></td>
-            <td><a class="btn btn-outline-danger" href="{{ route('delete', ['id'=>$a->id]) }}">削除</a></td>
+            <td class="align-middle">{{ $a->date->format('Y/m/d') }}</td>
+            <td class="align-middle">{{ $a->areaKou }}</td>
+            <td class="align-middle">{{ $a->areaOtsu }}</td>
+            <td class="align-middle">{{ $a->areaHei }}</td>
+            <td class="align-middle">{{ $a->areaTei }}</td>
+            <td class="align-middle">{{ $a->sum }}</td>
+            <td class="align-middle"><a class="btn btn-outline-dark btn-sm" href="{{ route('edit', ['id'=>$a->id]) }}">編集</a></td>
+            <td class="align-middle"><a class="btn btn-outline-danger btn-sm" href="{{ route('delete', ['id'=>$a->id]) }}">削除</a></td>
         </tr> 
         @endforeach
     </table>
     <a class="btn btn-outline-dark btn-sm mt-n3" href="{{ route('more', ['teamName'=> 'A']) }}">もっとみる</a>
 </div>
-<div class='cotainer'>
-    <h1 class="mt-5">チームB</h1>
+<div class='cotainer p-3 mt-3 border rounded' style="background-color:#ffffff;">
+    <h1>チームB</h1>
     <a class="btn btn-outline-primary btn-sm my-2" href="{{ route('new', ['teamName' => 'B']) }}">データの登録</a>
     <table class="table">
         <tr>
@@ -51,21 +51,21 @@
         </tr>
         @foreach($b_data as $b)
         <tr>
-            <td>{{ $b->date->format('Y/m/d') }}</td>
-            <td>{{ $b->areaKou }}</td>
-            <td>{{ $b->areaOtsu }}</td>
-            <td>{{ $b->areaHei }}</td>
-            <td>{{ $b->areaTei }}</td>
-            <td>{{ $b->sum }}</td>
-            <td><a class="btn btn-outline-dark" href="{{ route('edit', ['id'=>$b->id]) }}">編集</td>
-            <td><a class="btn btn-outline-danger" href="{{ route('delete', ['id'=>$b->id]) }}">削除</td>
+            <td class="align-middle">{{ $b->date->format('Y/m/d') }}</td>
+            <td class="align-middle">{{ $b->areaKou }}</td>
+            <td class="align-middle">{{ $b->areaOtsu }}</td>
+            <td class="align-middle">{{ $b->areaHei }}</td>
+            <td class="align-middle">{{ $b->areaTei }}</td>
+            <td class="align-middle">{{ $b->sum }}</td>
+            <td class="align-middle"><a class="btn btn-outline-dark btn-sm" href="{{ route('edit', ['id'=>$b->id]) }}">編集</td>
+            <td class="align-middle"><a class="btn btn-outline-danger btn-sm" href="{{ route('delete', ['id'=>$b->id]) }}">削除</td>
         </tr> 
         @endforeach
     </table>
     <a class="btn btn-outline-dark btn-sm mt-n3" href="{{ route('more', ['teamName'=> 'B']) }}">もっとみる</a>
 </div>
-<div class='cotainer'>
-    <h1 class="mt-5">チームC</h1>
+<div class='cotainer p-3 mt-3 border rounded' style="background-color:#ffffff;">
+    <h1>チームC</h1>
     <a class="btn btn-outline-primary btn-sm my-2" href="{{ route('new', ['teamName' => 'C']) }}">データの登録</a>
     <table class="table">
         <tr>
@@ -80,21 +80,21 @@
         </tr>
         @foreach($c_data as $c)
         <tr>
-            <td>{{ $c->date->format('Y/m/d') }}</td>
-            <td>{{ $c->areaKou }}</td>
-            <td>{{ $c->areaOtsu }}</td>
-            <td>{{ $c->areaHei }}</td>
-            <td>{{ $c->areaTei }}</td>
-            <td>{{ $c->sum }}</td>
-            <td><a class="btn btn-outline-dark" href="{{ route('edit', ['id'=>$c->id]) }}">編集</td>
-            <td><a class="btn btn-outline-danger" href="{{ route('delete', ['id'=>$c->id]) }}">削除</td>
+            <td class="align-middle">{{ $c->date->format('Y/m/d') }}</td>
+            <td class="align-middle">{{ $c->areaKou }}</td>
+            <td class="align-middle">{{ $c->areaOtsu }}</td>
+            <td class="align-middle">{{ $c->areaHei }}</td>
+            <td class="align-middle">{{ $c->areaTei }}</td>
+            <td class="align-middle">{{ $c->sum }}</td>
+            <td class="align-middle"><a class="btn btn-outline-dark btn-sm" href="{{ route('edit', ['id'=>$c->id]) }}">編集</td>
+            <td class="align-middle"><a class="btn btn-outline-danger btn-sm" href="{{ route('delete', ['id'=>$c->id]) }}">削除</td>
         </tr> 
         @endforeach
     </table>
     <a class="btn btn-outline-dark btn-sm mt-n3" href="{{ route('more', ['teamName'=> 'C']) }}">もっとみる</a>
 </div>
-<div class='cotainer'>
-    <h1 class="mt-5">チームD</h1>
+<div class='cotainer p-3 my-3 border rounded' style="background-color:#ffffff;">
+    <h1>チームD</h1>
     <a class="btn btn-outline-primary btn-sm my-2" href="{{ route('new', ['teamName' => 'D']) }}">データの登録</a>
     <table class="table">
         <tr>
@@ -109,14 +109,14 @@
         </tr>
         @foreach($d_data as $d)
         <tr>
-            <td>{{ $d->date->format('Y/m/d') }}</td>
-            <td>{{ $d->areaKou }}</td>
-            <td>{{ $d->areaOtsu }}</td>
-            <td>{{ $d->areaHei }}</td>
-            <td>{{ $d->areaTei }}</td>
-            <td>{{ $d->sum }}</td>
-            <td><a class="btn btn-outline-dark" href="{{ route('edit', ['id'=>$d->id]) }}">編集</td>
-            <td><a class="btn btn-outline-danger" href="{{ route('delete', ['id'=>$d->id]) }}">削除</td>
+            <td class="align-middle">{{ $d->date->format('Y/m/d') }}</td>
+            <td class="align-middle">{{ $d->areaKou }}</td>
+            <td class="align-middle">{{ $d->areaOtsu }}</td>
+            <td class="align-middle">{{ $d->areaHei }}</td>
+            <td class="align-middle">{{ $d->areaTei }}</td>
+            <td class="align-middle">{{ $d->sum }}</td>
+            <td class="align-middle"><a class="btn btn-outline-dark btn-sm" href="{{ route('edit', ['id'=>$d->id]) }}">編集</td>
+            <td class="align-middle"><a class="btn btn-outline-danger btn-sm" href="{{ route('delete', ['id'=>$d->id]) }}">削除</td>
         </tr> 
         @endforeach
     </table>

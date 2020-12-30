@@ -9,11 +9,11 @@
 </head>
 <body>
     <header>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-            </ol>
-        </nav>
+        <div class="container pt-2 pb-3">
+            <nav class="navbar navbar-light border-bottom">
+                <a class="navbar-brand" href="/">エリア得点集計システム</a>
+            </nav>
+        </div>
     </header>
     <div class="container">
         @section('main')

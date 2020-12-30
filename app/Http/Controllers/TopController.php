@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Validation\Rule;
 use App\Total;
 
 class TopController extends Controller
@@ -42,8 +43,16 @@ class TopController extends Controller
     public function store(Request $req){
         $data = new Total();
 
+        $rules = [
+            'date' => ['required', Rule::unique('totals', 'date')->where('teamName', $req->teamName)],
+            'teamName' => 'required|in: "A","B","C","D"',
+            'areaKou' => 'required|integer|min: 0',
+            'areaOtsu' => 'required|integer|min: 0',
+            'areaHei' => 'required|integer|min: 0',
+            'areaTei' => 'required|integer|min: 0'
+        ];
 
-        $this->validate($req, Total::$rules);
+        $this->validate($req, $rules);
         $data->fill($req->except('_token'))->save();
         return redirect('/')->with('flash_message', '登録が完了しました');
     }
@@ -56,9 +65,15 @@ class TopController extends Controller
 
     public function update(Request $req, $id)
     {
-        $this->validate($req, Total::$rules);
+        $rules = [
+            'areaKou' => 'required|integer|min: 0',
+            'areaOtsu' => 'required|integer|min: 0',
+            'areaHei' => 'required|integer|min: 0',
+            'areaTei' => 'required|integer|min: 0'
+        ];
+        $this->validate($req, $rules);
         $data = Total::find($id);
-        $data->fill($req->except('_token', '_method'))->save();
+        $data->fill($req->except('date', '_token', '_method'))->save();
 
         return redirect('/')->with('flash_message', '編集が完了しました');
     }

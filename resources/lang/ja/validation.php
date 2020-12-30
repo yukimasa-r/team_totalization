@@ -39,7 +39,7 @@ return [
     'exists'               => '選択された:attributeは正しくありません。',
     'image'                => ':attributeは画像にしてください。',
     'in'                   => '選択された:attributeは正しくありません。',
-    'integer'              => ':attributeは整数にしてください。',
+    'integer'              => ':attributeは数字にしてください。',
     'ip'                   => ':attributeを正しいIPアドレスにしてください。',
     'max'                  => [
         'numeric' => ':attributeは:max以下にしてください。',
@@ -72,7 +72,7 @@ return [
     ],
     'string'               => ':attributeは文字列にしてください。',
     'timezone'             => ':attributeは正しいタイムゾーンをしていしてください。',
-    'unique'               => ':attributeは既に存在します。',
+    'unique'               => 'その日付は既に記録されています。',
     'url'                  => ':attributeを正しい書式にしてください。',
 
     /*
@@ -103,6 +103,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'teamName' => 'チーム名',
+        'date' => '日付',
+        'areaKou' => 'エリア甲',
+        'areaOtsu' => 'エリア乙',
+        'areaHei' => 'エリア丙',
+        'areaTei' => 'エリア丁'
+    ],
 
 ];
