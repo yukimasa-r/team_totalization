@@ -1,5 +1,5 @@
 <?php  // resources/lang/ja/validation.php
-
+//流用　https://gist.github.com/syokunin/b37725686b5baf09255b
 return [
 
     /*
