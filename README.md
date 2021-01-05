@@ -1,7 +1,9 @@
 # エリア得点集計システム
 ## Overview
-
 4チームが4エリアで獲得した日々の得点を集計するシステム。
+
+# Demo
+https://team-totalization.herokuapp.com/
 
 ## Description
 * チームA/B/C/Dが、エリア甲/乙/丙/丁にて1日で獲得した得点を記録する。
