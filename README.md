@@ -2,7 +2,7 @@
 ## Overview
 4チームが4エリアで獲得した日々の得点を集計するシステム。
 
-# Demo
+## Demo
 https://team-totalization.herokuapp.com/
 
 ## Description
